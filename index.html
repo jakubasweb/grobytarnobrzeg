@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Groby Tarnobrzeg - pełna troski opieka nad grobami w Trójmieście. Sprzątanie, mycie nagrobków, kwiaty i znicze.">
+  <title>Groby Tarnobrzeg | Opieka nad grobami z troską</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <span>Pełna opieka nad grobami w Tarnobrzegu i okolicach</span>
+      <a href="tel:+48607455340">Zadzwoń: <strong>607 455 340</strong></a>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#start" aria-label="Groby Tarnobrzeg - strona główna">
+        <span class="brand-mark" aria-hidden="true">✦</span>
+        <span><strong>Groby</strong>Tarnobrzeg</span>
+      </a>
+      <button class="menu-toggle" aria-label="Otwórz menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav" aria-label="Główna nawigacja">
+        <a href="#uslugi">Usługi</a>
+        <a href="#jak-dzialamy">Jak działamy</a>
+        <a href="#opinie">Opinie</a>
+        <a href="#kontakt" class="nav-cta button button-primary">Bezpłatna wycena <span>→</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="start">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow"><span></span> Z troską o pamięć</p>
+          <h1>Sprzątanie grobów w Tarnobrzegu i innych miejscowościach.</h1>
+          <p class="hero-lead">Profesjonalna i pełna szacunku opieka nad grobami Twoich bliskich. Zajmiemy się wszystkim, gdy Ty nie możesz być na miejscu.</p>
+          <div class="hero-actions">
+            <a href="#kontakt" class="button button-primary">Zamów opiekę <span>→</span></a>
+            <a href="#uslugi" class="text-link">Poznaj nasze usługi <span>↓</span></a>
+          </div>
+          <!-- <div class="trust-row">
+            <div class="avatars" aria-hidden="true"><i>J</i><i>M</i><i>A</i><i>+</i></div>
+            <p><strong>50+</strong> zadbanych miejsc<br><span>Zaufali nam mieszkańcy Tarnobrzega i okolic</span></p>
+          </div> -->
+        </div>
+        <div class="hero-visual">
+          <div class="hero-image">
+            <div class="sun-glow"></div>
+            <div class="image-caption"><span class="caption-dot"></span> Tarnobrzeg · Sandomierz · Gorzyce</div>
+          </div>
+          <div class="floating-note">
+            <span class="note-icon">✓</span>
+            <span><strong>Zdjęcia przed i po</strong><small>Po każdej wizycie</small></span>
+          </div>
+        </div>
+      </div>
+      <div class="scroll-cue">Przewiń, aby dowiedzieć się więcej <span>↓</span></div>
+    </section>
+
+    <section class="intro section-pad">
+      <div class="container intro-grid">
+        <div>
+          <p class="eyebrow"><span></span> Czasem odległość dzieli</p>
+          <h2>My zajmiemy się<br><em>tym, co ważne.</em></h2>
+        </div>
+        <div class="intro-text">
+          <p>Wiemy, że pamięć o bliskich nie zna granic. Dlatego z uważnością i szacunkiem dbamy o miejsca spoczynku — regularnie, dokładnie i tak, jak zadbalibyśmy o nie dla własnej rodziny.</p>
+          <a class="arrow-link" href="#jak-dzialamy">Dowiedz się, jak działamy <span>↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="services section-pad" id="uslugi">
+      <div class="container">
+        <div class="section-heading">
+          <div><p class="eyebrow"><span></span> Nasza oferta</p><h2>Opieka, której<br><em>możesz zaufać.</em></h2></div>
+          <p>Od jednorazowego porządku po całoroczną opiekę — wybierz pakiet i rodzaj grobu, a cenę zobaczysz od razu.</p>
+        </div>
+        <div class="variant-switch" role="group" aria-label="Rodzaj grobu">
+          <button type="button" class="variant-btn active" data-variant="single" data-label="grób jednoosobowy" aria-pressed="true">Grób jednoosobowy</button>
+          <button type="button" class="variant-btn" data-variant="double" data-label="grób dwuosobowy" aria-pressed="false">Grób dwuosobowy</button>
+          <button type="button" class="variant-btn" data-variant="tomb" data-label="grobowiec" aria-pressed="false">Grobowiec</button>
+        </div>
+        <div class="service-grid">
+          <article class="service-card" data-package="Porządek">
+            <div class="service-number">01</div><div class="service-icon">◌</div>
+            <h3>Porządek</h3>
+            <p>Jednorazowe uporządkowanie grobu — idealne przed rocznicą lub odwiedzinami rodziny.</p>
+            <div class="service-price"><strong><span class="price-value" data-single="150" data-double="250" data-tomb="400">150</span> zł</strong><small>za jedną wizytę</small></div>
+            <ul class="service-features">
+              <li>Mycie płyty i pomnika</li>
+              <li>Usunięcie liści, chwastów i mchu</li>
+              <li>Uporządkowanie otoczenia grobu</li>
+              <li>Zdjęcia przed i po</li>
+            </ul>
+            <a href="#kontakt" class="package-cta" aria-label="Wybieram pakiet Porządek">Wybieram pakiet <span>↗</span></a>
+          </article>
+          <article class="service-card featured" data-package="Pamięć">
+            <span class="service-badge">Najczęściej wybierany</span>
+            <div class="service-number">02</div><div class="service-icon">✧</div>
+            <h3>Pamięć</h3>
+            <p>Sprzątanie z oprawą: świeże kwiaty i znicze, aby grób wyglądał pięknie w ważnym dla Ciebie dniu.</p>
+            <div class="service-price"><strong><span class="price-value" data-single="250" data-double="450" data-tomb="700">250</span> zł</strong><small>za jedną wizytę</small></div>
+            <ul class="service-features">
+              <li>Wszystko z pakietu Porządek</li>
+              <li>Dostarczenie świeżych kwiatów</li>
+              <li>Wymiana wkładów i zapalenie zniczy</li>
+              <li>Zdjęcia przed i po</li>
+            </ul>
+            <a href="#kontakt" class="package-cta" aria-label="Wybieram pakiet Pamięć">Wybieram pakiet <span>↗</span></a>
+          </article>
+          <article class="service-card" data-package="Opieka całoroczna">
+            <div class="service-number">03</div><div class="service-icon">◇</div>
+            <h3>Opieka całoroczna</h3>
+            <p>Stała troska przez cały rok. Ty nie musisz o niczym pamiętać — my pilnujemy terminów.</p>
+            <div class="service-price"><strong><span class="price-value" data-single="880" data-double="1560" data-tomb="2300">880</span> zł</strong><small>za rok, 4 wizyty</small></div>
+            <ul class="service-features">
+              <li>Cztery wizyty w roku</li>
+              <li>Pełna oprawa na Wszystkich Świętych</li>
+              <li>Znicze i kwiaty przy głównych świętach w cenie usługi</li>
+              <li>Zdjęcia po każdej wizycie</li>
+            </ul>
+            <a href="#kontakt" class="package-cta" aria-label="Wybieram pakiet Opieka całoroczna">Wybieram pakiet <span>↗</span></a>
+          </article>
+        </div>
+        <p class="pricing-note">Podane ceny są orientacyjne. Ostateczną, bezpłatną wycenę przygotujemy po zapoznaniu się ze stanem grobu — bez ukrytych kosztów.</p>
+      </div>
+    </section>
+
+    <section class="process section-pad" id="jak-dzialamy">
+      <div class="container process-grid">
+        <div class="process-visual"><span class="process-stamp">Z<br><small>troską</small></span></div>
+        <div class="process-copy">
+          <p class="eyebrow"><span></span> Prosto i przejrzyście</p>
+          <h2>Ty zlecasz.<br><em>My pamiętamy.</em></h2>
+          <div class="steps">
+            <div class="step"><b>01</b><div><h3>Napisz lub zadzwoń</h3><p>Opowiedz nam, którego grobu dotyczy opieka i czego potrzebujesz.</p></div></div>
+            <div class="step"><b>02</b><div><h3>Otrzymaj wycenę</h3><p>Przygotujemy jasną wycenę bez ukrytych kosztów.</p></div></div>
+            <div class="step"><b>03</b><div><h3>Otrzymaj zdjęcia</h3><p>Po wykonaniu prac wyślemy Ci dokumentację przed i po wizycie.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonial section-pad" id="opinie">
+      <div class="container testimonial-inner">
+        <p class="quote-mark">“</p>
+        <blockquote>Nie mieszkam już w Tarnobrzegu, ale dzięki "Groby Tarnobrzeg" wiem, że grób moich rodziców jest zawsze zadbany. Zdjęcia po każdej wizycie dają mi ogromny spokój.</blockquote>
+        <div class="quote-author"><span class="author-line"></span><strong>Ewa W.</strong><span>·</span><span>klientka od 2025 roku</span></div>
+      </div>
+    </section>
+
+    <section class="contact section-pad" id="kontakt">
+      <div class="container contact-grid">
+        <div class="contact-copy">
+          <p class="eyebrow"><span></span> Jesteśmy tutaj</p>
+          <h2>Porozmawiajmy<br><em>o opiece.</em></h2>
+          <p>Napisz kilka słów — wrócimy z odpowiedzią i bezpłatną wyceną w ciągu 24 godzin.</p>
+          <div class="contact-detail"><span>☎</span><div><small>Zadzwoń bezpośrednio</small><a href="tel:+48607455340">607 455 340</a></div></div>
+          <div class="contact-detail"><span>✉</span><div><small>Napisz wiadomość</small><a href="mailto:kontakt@czystypomnik.pl">kontakt@czystypomnik.pl</a></div></div>
+        </div>
+        <form class="contact-form" id="contact-form">
+          <label for="name">Imię</label>
+          <input id="name" name="name" type="text" placeholder="Jak mamy się do Ciebie zwracać?" required>
+          <label for="phone">Telefon lub e-mail</label>
+          <input id="phone" name="phone" type="text" placeholder="Najlepszy kontakt" required>
+          <label for="message">Wiadomość <span>(opcjonalnie)</span></label>
+          <textarea id="message" name="message" rows="3" placeholder="Napisz, czego potrzebujesz..."></textarea>
+          <button class="button button-primary" type="submit">Poproś o bezpłatną wycenę <span>→</span></button>
+          <p class="form-note">Odpowiemy w ciągu 24 godzin. Twoje dane pozostają bezpieczne.</p>
+          <p class="form-success" role="status">Dziękujemy! Odezwiemy się do Ciebie w ciągu 24 godzin.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="brand" href="#start"><span class="brand-mark">✦</span></a>
+      <p>Pełna troski opieka nad grobami.</p>
+      <p>© 2024 Groby Tarnobrzeg</p>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,1326 @@
+/* =========================================================
+   SPIS TREŚCI
+   1.  Zmienne globalne (kolory, czcionki)
+   2.  Reset i style bazowe
+   3.  Elementy wspólne
+       3.1 Kontener i odstępy sekcji
+       3.2 Typografia (nagłówki, etykiety)
+       3.3 Przyciski i linki tekstowe
+       3.4 Logo
+   4.  Sekcja: Pasek górny
+   5.  Sekcja: Nagłówek i nawigacja
+   6.  Sekcja: Hero (ekran startowy)
+   7.  Sekcja: Wstęp
+   8.  Sekcja: Usługi
+   9.  Sekcja: Jak działamy (proces)
+   10. Sekcja: Opinie
+   11. Sekcja: Kontakt i formularz
+   12. Sekcja: Stopka
+   13. Responsywność (media queries)
+       13.1 Ekrany do 800px
+       13.2 Ekrany do 420px
+   ========================================================= */
+
+/* =========================================================
+   1. ZMIENNE GLOBALNE
+   Kolory marki oraz rodziny czcionek używane w całym arkuszu.
+   ========================================================= */
+:root {
+  --ink: #26342e;
+  --muted: #6d7c75;
+  --cream: #f5f3ed;
+  --paper: #fbfaf7;
+  --sage: #dbe6da;
+  --green: #607c6a;
+  --line: #d8ddd6;
+  --orange: #bd7855;
+  --serif: "Playfair Display", Georgia, serif;
+  --sans: "DM Sans", Arial, sans-serif;
+}
+/* =========================================================
+   2. RESET I STYLE BAZOWE
+   Zerowanie domyślnych stylów przeglądarki.
+   ========================================================= */
+
+/* Padding i border są wliczane w szerokość elementu */
+* {
+  box-sizing: border-box;
+}
+
+/* Płynne przewijanie do kotwic (np. #uslugi) */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Podstawowe ustawienia strony: kolor, tło, czcionka, interlinia */
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: var(--sans);
+  line-height: 1.6;
+}
+
+/* Linki dziedziczą kolor tekstu i nie mają podkreślenia */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* =========================================================
+   3. ELEMENTY WSPÓLNE
+   Komponenty wielokrotnego użytku w wielu sekcjach.
+   ========================================================= */
+
+/* 3.1 Kontener i odstępy sekcji */
+
+/* Wyśrodkowana treść o maksymalnej szerokości 1160px */
+.container {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+/* Standardowy pionowy odstęp sekcji */
+.section-pad {
+  padding: 105px 0;
+}
+
+/* 3.2 Typografia */
+
+/* Etykieta nad nagłówkiem: wielkie litery, pomarańczowy kolor */
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--orange);
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin: 0 0 20px;
+}
+
+/* Pozioma kreska dekoracyjna w etykiecie */
+.eyebrow span {
+  width: 25px;
+  height: 1px;
+  background: var(--orange);
+}
+
+/* Nagłówki h1 i h2: czcionka szeryfowa, zerowy margines */
+h1,
+h2 {
+  font-family: var(--serif);
+  font-weight: 500;
+  letter-spacing: -.045em;
+  line-height: 1.07;
+  margin: 0;
+}
+
+/* Nagłówek główny (hero) */
+h1 {
+  font-size: clamp(45px,5.5vw,75px);
+}
+
+/* Nagłówki sekcji */
+h2 {
+  font-size: clamp(39px,4.2vw,57px);
+}
+
+/* Wyróżniony fragment nagłówka: zielona kursywa */
+h1 em,
+h2 em {
+  color: var(--green);
+  font-style: italic;
+}
+
+/* 3.3 Przyciski i linki tekstowe */
+
+/* Przycisk: wyśrodkowana zawartość i animacja zmiany */
+.button {
+  border: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  padding: 16px 22px;
+  font: 600 16px var(--sans);
+  white-space: nowrap;
+  letter-spacing: .02em;
+  cursor: pointer;
+  transition: transform .2s, background .2s;
+}
+
+/* Przycisk po najechaniu: lekkie uniesienie */
+.button:hover {
+  transform: translateY(-2px);
+}
+
+/* Przycisk główny: zielone tło */
+.button-primary {
+  background: var(--green);
+  color: #fff;
+}
+
+/* Przycisk główny po najechaniu: ciemniejsze tło */
+.button-primary:hover {
+  background: var(--ink);
+}
+
+/* Strzałka wewnątrz przycisku */
+.button span {
+  font-size: 24px;
+  font-weight: 400;
+}
+
+/* Link tekstowy z zielonym kolorem */
+.text-link {
+  font-size: 16px;
+  white-space: nowrap;
+  font-weight: 600;
+  color: var(--green);
+}
+
+/* Strzałka w linku tekstowym */
+.text-link span {
+  font-size: 22px;
+  padding-left: 8px;
+}
+
+/* 3.4 Logo */
+
+/* Logo: ikona i nazwa w jednym wierszu */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 22px;
+  letter-spacing: -.03em;
+}
+
+/* Pogrubiona część nazwy logo */
+.brand strong {
+  font-weight: 700;
+}
+
+/* Okrągła ikona logo */
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: #fff;
+  background: var(--green);
+  font-size: 19px;
+}/* =========================================================
+   4. SEKCJA: PASEK GÓRNY
+   Cienki pasek z hasłem i numerem telefonu nad nagłówkiem.
+   ========================================================= */
+
+/* Tło paska i styl tekstu */
+.topbar {
+  background: var(--ink);
+  color: #e4ebe2;
+  font-size: 16px;
+  letter-spacing: .03em;
+}
+
+/* Układ paska: treść po lewej, telefon po prawej */
+.topbar-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 40px;
+}
+
+/* Link telefoniczny w pasku */
+.topbar a {
+  color: #d1dfd1;
+}/* =========================================================
+   5. SEKCJA: NAGŁÓWEK I NAWIGACJA
+   Główny pasek strony z logo i menu.
+   ========================================================= */
+
+/* Kontener nagłówka: tło i warstwa nad treścią */
+.site-header {
+  background: var(--paper);
+  position: relative;
+  z-index: 5;
+}
+
+/* Wiersz nawigacji: logo po lewej, menu po prawej */
+.nav-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 84px;
+}
+
+/* Lista linków menu głównego */
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(20px,2.4vw,34px);
+  font-size: 16px;
+  color: #57655e;
+}
+
+/* Kolor po najechaniu: linki menu, linki tekstowe i strzałkowe */
+.main-nav a:not(.nav-cta):hover,
+.text-link:hover,
+.arrow-link:hover {
+  color: var(--orange);
+}
+
+/* Przycisk hamburgera (ukryty na dużych ekranach) */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: 0;
+}/* =========================================================
+   6. SEKCJA: HERO (EKRAN STARTOWY)
+   Duży nagłówek, opis, przyciski i grafika na pierwszym ekranie.
+   ========================================================= */
+
+/* Kontener hero: kremowe tło, przycięte elementy dekoracyjne */
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 72px 0 100px;
+  background: var(--cream);
+}
+
+/* Dekoracyjny okrąg w tle hero */
+.hero:before {
+  content: "";
+  position: absolute;
+  top: -150px;
+  left: -180px;
+  width: 550px;
+  height: 550px;
+  border: 1px solid #e2ded2;
+  border-radius: 50%;
+}
+
+/* Dwie kolumny: tekst po lewej, grafika po prawej */
+.hero-grid {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  align-items: center;
+  gap: 65px;
+}/* Krótki opis pod nagłówkiem hero */
+.hero-lead {
+  max-width: 480px;
+  font-size: 20px;
+  color: var(--muted);
+  margin: 28px 0 30px;
+}
+
+/* Rząd przycisków w hero */
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 25px;
+}/* Wiersz zaufania: awatary i liczba klientów */
+.trust-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 48px;
+  color: var(--green);
+  font-size: 16px;
+}
+
+/* Tekst obok awatarów */
+.trust-row p {
+  margin: 0;
+  line-height: 1.45;
+}
+
+/* Wyróżniona liczba klientów */
+.trust-row strong {
+  color: var(--ink);
+  font-size: 20px;
+}
+
+/* Podpis pod liczbą klientów */
+.trust-row p span {
+  color: var(--muted);
+  font-size: 15px;
+}
+
+/* Nakładające się kółka z inicjałami */
+.avatars {
+  display: flex;
+}
+
+/* Pojedynczy awatar */
+.avatars i {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-right: -8px;
+  border: 2px solid var(--cream);
+  background: #afc0b0;
+  font: 600 14px var(--sans);
+  font-style: normal;
+  color: var(--ink);
+}
+
+/* Kolory kolejnych awatarów */
+.avatars i:nth-child(2) {
+  background: #d4aa92;
+}
+
+.avatars i:nth-child(3) {
+  background: #80968b;
+}
+
+.avatars i:nth-child(4) {
+  background: var(--ink);
+  color: #fff;
+}/* Kontener grafiki hero o stałej wysokości */
+.hero-visual {
+  height: 480px;
+  position: relative;
+}
+
+/* Zaokrąglony panel z gradientem jako tło grafiki */
+.hero-image {
+  height: 100%;
+  margin: 0 30px 0 45px;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(145deg,#879f8f 0%,#c9c7ad 46%,#6e8573 100%);
+  border-radius: 145px 145px 4px 4px;
+}
+
+/* Warstwa z ukośnymi cieniami na grafice */
+.hero-image:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg,transparent 28%,rgba(44,74,57,.65) 29%,rgba(44,74,57,.12) 64%),linear-gradient(40deg,rgba(242,235,204,.8),transparent 44%);
+  mix-blend-mode: multiply;
+}
+
+/* Rysunkowa ramka (łuk) na środku grafiki */
+.hero-image:after {
+  content: "";
+  position: absolute;
+  width: 190px;
+  height: 120px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-38%,-32%) rotate(-8deg);
+  border: 10px solid rgba(216,221,205,.75);
+  border-bottom-width: 19px;
+  box-shadow: 0 22px 20px rgba(23,43,31,.2);
+}
+
+/* Rozmyta plama słońca w prawym górnym rogu grafiki */
+.sun-glow {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  background: #f6db9b;
+  opacity: .7;
+  border-radius: 50%;
+  top: -65px;
+  right: 10px;
+  filter: blur(5px);
+}
+
+/* Podpis miast na grafice */
+.image-caption {
+  position: absolute;
+  z-index: 2;
+  bottom: 22px;
+  left: 28px;
+  color: #fff;
+  font-size: 14px;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+
+/* Złota kropka przed podpisem */
+.caption-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: #f4c477;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+/* Białe okienko z informacją o zdjęciach przed i po */
+.floating-note {
+  position: absolute;
+  right: -7px;
+  bottom: 42px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #fff;
+  padding: 14px 18px;
+  box-shadow: 0 10px 30px #384c3b1c;
+  font-size: 16px;
+}
+
+/* Ikona "ptaszka" w okienku */
+.note-icon {
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--sage);
+  color: var(--green);
+  width: 26px;
+  height: 26px;
+  font-weight: bold;
+}
+
+/* Tytuł i podpis w okienku jako bloki */
+.floating-note strong,
+.floating-note small {
+  display: block;
+}
+
+/* Drobny podpis w okienku */
+.floating-note small {
+  font-size: 16px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+/* Wskazówka "przewiń" na dole hero */
+.scroll-cue {
+  position: absolute;
+  bottom: 26px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-size: 14px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* Strzałka we wskazówce przewijania */
+.scroll-cue span {
+  margin-left: 9px;
+  font-size: 20px;
+}/* =========================================================
+   7. SEKCJA: WSTĘP
+   Krótki, dwukolumnowy wstęp z nagłówkiem i opisem.
+   ========================================================= */
+
+/* Tło sekcji wstępu */
+.intro {
+  background: var(--paper);
+}
+
+/* Dwie kolumny wyrównane do dołu */
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+  align-items: end;
+}
+
+/* Tekst opisu w prawej kolumnie */
+.intro-text {
+  max-width: 480px;
+  color: var(--muted);
+  font-size: 16px;
+}
+
+/* Link ze strzałką w sekcji wstępu */
+.arrow-link {
+  display: inline-block;
+  margin-top: 18px;
+  color: var(--green);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* Strzałka w linku */
+.arrow-link span {
+  margin-left: 12px;
+  color: var(--orange);
+  font-size: 22px;
+}/* =========================================================
+   8. SEKCJA: USŁUGI
+   Nagłówek sekcji i siatka kart z ofertą.
+   ========================================================= */
+
+/* Tło sekcji usług */
+.services {
+  background: #edf1eb;
+}
+
+/* Nagłówek sekcji: tytuł po lewej, opis po prawej */
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-bottom: 45px;
+}
+
+/* Krótki opis przy nagłówku sekcji */
+.section-heading > p {
+  max-width: 330px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 16px;
+}
+
+/* Trzy kolumny kart usług */
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 17px;
+}
+
+/* Pojedyncza karta usługi */
+.service-card {
+  background: var(--paper);
+  padding: 28px 29px 76px;
+  min-height: 340px;
+  position: relative;
+  transition: transform .2s, box-shadow .2s;
+}
+
+/* Karta po najechaniu: uniesienie i cień */
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 30px #34483712;
+}
+
+/* Wyróżniona karta: zielone tło i jasny tekst */
+.service-card.featured {
+  background: var(--green);
+  color: #fff;
+}
+
+/* Numer karty (01, 02, 03) */
+.service-number {
+  font-size: 16px;
+  color: var(--orange);
+  font-weight: 700;
+}
+
+/* Numer na wyróżnionej karcie */
+.featured .service-number {
+  color: #d8bc92;
+}
+
+/* Ikona karty */
+.service-icon {
+  font-size: 34px;
+  color: var(--orange);
+  margin: 25px 0 8px;
+}
+
+/* Tytuł karty */
+.service-card h3 {
+  font: 500 25px var(--serif);
+  margin: 0 0 13px;
+}
+
+/* Opis karty */
+.service-card p {
+  font-size: 16px;
+  color: var(--muted);
+  margin: 0 0 25px;
+}
+
+/* Opis na wyróżnionej karcie */
+.featured p {
+  color: #d5e0d5;
+}
+
+/* Link "Zapytaj o usługę" przypięty do dołu karty */
+.service-card a {
+  position: absolute;
+  bottom: 28px;
+  color: var(--green);
+  font-weight: 700;
+  font-size: 16px;
+}
+
+/* Link na wyróżnionej karcie */
+.featured a {
+  color: #fff;
+}
+
+/* Strzałka w linku karty */
+.service-card a span {
+  font-size: 21px;
+  color: var(--orange);
+  margin-left: 13px;
+}/* =========================================================
+
+/* Przełącznik rodzaju grobu nad pakietami */
+.variant-switch {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 6px;
+  margin-bottom: 28px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+}
+
+.variant-btn {
+  border: 0;
+  background: none;
+  padding: 11px 20px;
+  font: 600 15px var(--sans);
+  color: var(--muted);
+  cursor: pointer;
+  transition: background .2s, color .2s;
+}
+
+.variant-btn:hover {
+  color: var(--ink);
+}
+
+.variant-btn.active {
+  background: var(--green);
+  color: #fff;
+}
+
+/* Karta pakietu: zawartość w kolumnie, przycisk zawsze na dole */
+.service-grid .service-card {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 28px;
+  min-height: 0;
+}
+
+/* Plakietka na wyróżnionym pakiecie */
+.service-badge {
+  position: absolute;
+  top: 0;
+  right: 29px;
+  padding: 6px 12px;
+  background: var(--orange);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.service-grid .service-card p {
+  margin-bottom: 20px;
+}
+
+/* Cena pakietu */
+.service-price {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 16px 0;
+  margin-bottom: 18px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.service-price strong {
+  font: 500 40px var(--serif);
+  line-height: 1;
+}
+
+.service-price small {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.featured .service-price {
+  border-color: #ffffff3d;
+}
+
+.featured .service-price small {
+  color: #d5e0d5;
+}
+
+/* Lista zawartości pakietu */
+.service-features {
+  list-style: none;
+  margin: 0 0 28px;
+  padding: 0;
+  font-size: 16px;
+}
+
+.service-features li {
+  position: relative;
+  padding: 0 0 10px 26px;
+}
+
+.service-features li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--orange);
+  font-weight: 700;
+}
+
+.featured .service-features li::before {
+  color: #d8bc92;
+}
+
+/* Przycisk wyboru pakietu: przypięty do dołu karty */
+.service-card .package-cta {
+  position: static;
+  margin-top: auto;
+  padding: 14px 18px;
+  border: 1px solid var(--green);
+  text-align: center;
+  transition: background .2s, color .2s;
+}
+
+.service-card .package-cta:hover {
+  background: var(--green);
+  color: #fff;
+}
+
+.featured .package-cta {
+  border-color: #fff;
+}
+
+.featured .package-cta:hover {
+  background: #fff;
+  color: var(--green);
+}
+
+/* Uwaga pod pakietami */
+.pricing-note {
+  margin: 26px 0 0;
+  color: var(--muted);
+  font-size: 15px;
+}/* =========================================================
+   9. SEKCJA: JAK DZIAŁAMY (PROCES)
+   Ilustracja z pieczątką oraz lista trzech kroków.
+   ========================================================= */
+
+/* Tło sekcji procesu */
+.process {
+  background: var(--cream);
+}
+
+/* Dwie kolumny: ilustracja po lewej, kroki po prawej */
+.process-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+  align-items: center;
+}
+
+/* Zielony panel ilustracyjny z gradientem */
+.process-visual {
+  height: 500px;
+  position: relative;
+  background: linear-gradient(160deg,#7b927f,#d1d4b8 48%,#b4c2aa);
+  overflow: hidden;
+}
+
+/* Dekoracyjny łuk (kształt liścia) na ilustracji */
+.process-visual:before {
+  content: "";
+  position: absolute;
+  width: 270px;
+  height: 340px;
+  left: 37%;
+  top: 16%;
+  border-left: 7px solid rgba(44,73,54,.65);
+  border-radius: 50% 50% 0 0;
+  transform: rotate(28deg);
+  box-shadow: -47px 9px 0 3px rgba(44,73,54,.29),40px 20px 0 -3px rgba(44,73,54,.33);
+}
+
+/* Przyciemnienie ilustracji od dołu */
+.process-visual:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(25deg,rgba(30,65,41,.37),transparent 55%);
+}
+
+/* Okrągła pieczątka "Z troską" na ilustracji */
+.process-stamp {
+  position: absolute;
+  z-index: 1;
+  right: 30px;
+  top: 28px;
+  border: 1px solid #fff9;
+  color: #fff;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  font: 500 28px/24px var(--serif);
+  transform: rotate(10deg);
+}
+
+/* Podpis pod napisem w pieczątce */
+.process-stamp small {
+  font: italic 16px var(--serif);
+}
+
+/* Nagłówek w kolumnie tekstu */
+.process-copy h2 {
+  margin-bottom: 42px;
+}
+
+/* Lista kroków */
+.steps {
+  display: grid;
+  gap: 25px;
+}
+
+/* Pojedynczy krok: numer i treść */
+.step {
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  gap: 14px;
+  border-top: 1px solid var(--line);
+  padding-top: 17px;
+}
+
+/* Numer kroku */
+.step b {
+  font-size: 16px;
+  color: var(--orange);
+}
+
+/* Tytuł kroku */
+.step h3 {
+  font-size: 18px;
+  margin: 0 0 3px;
+}
+
+/* Opis kroku */
+.step p {
+  font-size: 16px;
+  color: var(--muted);
+  margin: 0;
+  max-width: 360px;
+}/* =========================================================
+   10. SEKCJA: OPINIE
+   Wyróżniony cytat klientki na zielonym tle.
+   ========================================================= */
+
+/* Zielone tło, wyśrodkowana treść */
+.testimonial {
+  background: var(--green);
+  color: #fff;
+  text-align: center;
+}
+
+/* Ograniczona szerokość treści cytatu */
+.testimonial-inner {
+  max-width: 780px;
+}
+
+/* Duży znak cudzysłowu */
+.quote-mark {
+  color: #dbb68d;
+  font: 82px/40px var(--serif);
+  margin: 0;
+}
+
+/* Treść cytatu */
+.testimonial blockquote {
+  font: 500 34px/1.35 var(--serif);
+  letter-spacing: -.025em;
+  margin: 0 0 28px;
+}
+
+/* Podpis: kreska, imię i opis klientki */
+.quote-author {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 11px;
+  color: #d5e0d5;
+  font-size: 16px;
+  flex-wrap: wrap;
+}
+
+/* Imię klientki */
+.quote-author strong {
+  color: #fff;
+}
+
+/* Krótka pozioma kreska przed podpisem */
+.author-line {
+  width: 28px;
+  height: 1px;
+  background: #d7b084;
+}/* =========================================================
+   11. SEKCJA: KONTAKT I FORMULARZ
+   Dane kontaktowe po lewej, formularz wyceny po prawej.
+   ========================================================= */
+
+/* Tło sekcji kontaktu */
+.contact {
+  background: var(--paper);
+}
+
+/* Dwie kolumny: dane kontaktowe i formularz */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 120px;
+}
+
+/* Opis pod nagłówkiem (bez etykiety) */
+.contact-copy > p:not(.eyebrow) {
+  color: var(--muted);
+  font-size: 16px;
+  max-width: 400px;
+  margin: 26px 0 34px;
+}
+
+/* Wiersz z danym kontaktowym: ikona i treść */
+.contact-detail {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin-top: 18px;
+}
+
+/* Okrągła ikona przy danych kontaktowych */
+.contact-detail > span {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  background: var(--sage);
+  color: var(--green);
+  border-radius: 50%;
+  font-size: 19px;
+}
+
+/* Podpis nad danymi kontaktowymi */
+.contact-detail small {
+  display: block;
+  font-size: 16px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .1em;
+}
+
+/* Telefon lub e-mail jako link */
+.contact-detail a {
+  display: block;
+  color: var(--green);
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: 1px;
+}
+
+/* Formularz: układ w jednej kolumnie */
+.contact-form {
+  padding-top: 12px;
+  display: grid;
+  gap: 8px;
+}
+
+/* Etykiety pól formularza */
+.contact-form label {
+  font-size: 16px;
+  color: var(--green);
+  font-weight: 700;
+  margin-top: 12px;
+}
+
+/* Dopisek "(opcjonalnie)" w etykiecie */
+.contact-form label span {
+  color: #a9afa9;
+  font-weight: 400;
+}
+
+/* Pola tekstowe: tylko dolna linia */
+.contact-form input,
+.contact-form textarea {
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  background: transparent;
+  padding: 10px 0;
+  font: 16px var(--sans);
+  color: var(--ink);
+  outline: 0;
+  resize: vertical;
+}
+
+/* Aktywne pole: zielona linia */
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--green);
+}
+
+/* Przycisk wysyłki w formularzu */
+.contact-form .button {
+  justify-self: start;
+  margin-top: 22px;
+}
+
+/* Drobna informacja pod formularzem */
+.form-note {
+  font-size: 16px;
+  color: var(--muted);
+  margin: 7px 0;
+}
+
+/* Komunikat po wysłaniu (ukryty do momentu wysłania) */
+.form-success {
+  display: none;
+  color: var(--green);
+  font-size: 17px;
+  font-weight: 600;
+}
+
+/* Widoczność komunikatu po wysłaniu formularza */
+.form-success.visible {
+  display: block;
+}/* =========================================================
+   12. SEKCJA: STOPKA
+   Logo, krótki opis i prawa autorskie.
+   ========================================================= */
+
+/* Ciemne tło stopki */
+.site-footer {
+  background: var(--ink);
+  color: #d8e1d9;
+  padding: 28px 0;
+}
+
+/* Układ stopki: elementy w jednym wierszu */
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 16px;
+}
+
+/* Logo w stopce - nieco mniejsze */
+.footer-inner .brand {
+  font-size: 19px;
+}
+
+/* Jaśniejsza ikona logo w stopce */
+.footer-inner .brand-mark {
+  background: #78907c;
+}
+
+/* Teksty w stopce */
+.footer-inner p {
+  margin: 0;
+  color: #aab9ad;
+}
+/* =========================================================
+   13. RESPONSYWNOŚĆ
+   Reguły nadpisujące style dla mniejszych ekranów.
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   13.1 Ekrany do 800px (tablet i telefon)
+   --------------------------------------------------------- */
+@media (max-width: 800px) {
+
+  /* Elementy wspólne: mniejsze marginesy kontenera i sekcji */
+  .container {
+    padding: 0 21px;
+  }
+
+  .section-pad {
+    padding: 75px 0;
+  }
+
+  /* Pasek górny: ukrycie tekstu, telefon wyrównany do prawej */
+  .topbar-inner {
+    font-size: 15px;
+  }
+
+  .topbar-inner > span {
+    display: none;
+  }
+
+  .topbar-inner {
+    justify-content: flex-end;
+  }
+
+  /* Nawigacja: hamburger i rozwijane menu */
+  .nav-wrap {
+    height: 68px;
+  }
+
+  .menu-toggle {
+    display: block;
+    width: 33px;
+    padding: 7px 0;
+  }
+
+  .menu-toggle span {
+    display: block;
+    height: 1px;
+    background: var(--ink);
+    margin: 5px 0;
+  }
+
+  .main-nav {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 68px;
+    padding: 18px 21px 22px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+    background: var(--paper);
+    box-shadow: 0 8px 14px #21352614;
+  }
+
+  .main-nav.open {
+    display: flex;
+  }
+
+  .nav-cta {
+    text-align: center;
+  }
+
+  /* Hero: jedna kolumna, mniejsza grafika */
+  .hero {
+    padding: 57px 0 80px;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .hero-visual {
+    height: 390px;
+  }
+
+  .hero-image {
+    margin: 0 20px 0 10px;
+  }
+
+  .floating-note {
+    right: 0;
+  }
+
+  .scroll-cue {
+    display: none;
+  }
+
+  /* Układ wspólny: wstęp, proces i kontakt w jednej kolumnie */
+  .intro-grid,
+  .process-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 38px;
+  }
+
+  /* Wstęp: mniejszy odstęp między kolumnami */
+  .intro-grid {
+    gap: 24px;
+  }
+
+  /* Usługi: nagłówek i karty w pionie */
+  .section-heading {
+    display: block;
+    margin-bottom: 30px;
+  }
+
+  .section-heading > p {
+    margin-top: 22px;
+  }
+
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .variant-switch {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  /* Proces: ilustracja pod tekstem */
+  .process-visual {
+    height: 350px;
+    order: 2;
+  }
+
+  .process-copy {
+    order: 1;
+  }
+
+  .process-copy h2 {
+    margin-bottom: 32px;
+  }
+
+  /* Opinie: mniejszy cytat */
+  .testimonial blockquote {
+    font-size: 28px;
+  }
+
+  /* Kontakt: mniejszy odstęp */
+  .contact-grid {
+    gap: 50px;
+  }
+
+  /* Stopka: elementy zawijane do kolejnych wierszy */
+  .footer-inner {
+    flex-wrap: wrap;
+    gap: 18px;
+  }
+
+  .footer-inner p:last-child {
+    width: 100%;
+  }
+}
+/* ---------------------------------------------------------
+   13.2 Ekrany do 420px (małe telefony)
+   --------------------------------------------------------- */
+@media (max-width: 420px) {
+
+  /* Elementy: mniejszy nagłówek główny */
+  h1 {
+    font-size: 45px;
+  }
+
+  /* Hero: przyciski jeden pod drugim, mniejsza grafika */
+  .hero-actions {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .hero-visual {
+    height: 330px;
+  }
+
+  .floating-note {
+    font-size: 14px;
+    padding: 11px;
+  }
+
+  /* Opinie: mniejszy cytat */
+  .testimonial blockquote {
+    font-size: 25px;
+  }
+}
