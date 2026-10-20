@@ -1,0 +1,5 @@
+# UWAGA: Strona jest w budowie - blokujemy indeksowanie przez wyszukiwarki.
+# Przed publikacją gotowej strony usuń poniższy wpis (albo zmień na zezwalający),
+# aby Google i inne wyszukiwarki mogły ją indeksować.
+User-agent: *
+Disallow: /
