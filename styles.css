@@ -215,6 +215,22 @@ h2 em {
   background: var(--green);
   font-size: 19px;
 }/* =========================================================
+
+/* Grafika logo (płomień znicza) wypełniająca okrągłą plakietkę */
+.brand-mark svg {
+  width: 17px;
+  height: 17px;
+}
+
+/* Zewnętrzny kontur płomienia - w kolorze kremowym */
+.brand-mark-flame {
+  fill: #f5f3ed;
+}
+
+/* Wewnętrzny płomień - akcent w kolorze złotym */
+.brand-mark-flame-inner {
+  fill: #f4c477;
+}/* =========================================================
    4. SEKCJA: PASEK GÓRNY
    Cienki pasek z hasłem i numerem telefonu nad nagłówkiem.
    ========================================================= */
