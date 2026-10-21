@@ -416,40 +416,22 @@ h2 em {
   border-radius: 145px 145px 4px 4px;
 }
 
-/* Warstwa z ukośnymi cieniami na grafice */
+/* Ilustracja wypełnia panel, zakotwiczona przy dolnej krawędzi */
+.hero-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+}
+
+/* Ciemniejszy dół panelu dla czytelności podpisu */
 .hero-image:before {
   content: "";
   position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg,transparent 28%,rgba(44,74,57,.65) 29%,rgba(44,74,57,.12) 64%),linear-gradient(40deg,rgba(242,235,204,.8),transparent 44%);
-  mix-blend-mode: multiply;
-}
-
-/* Rysunkowa ramka (łuk) na środku grafiki */
-.hero-image:after {
-  content: "";
-  position: absolute;
-  width: 190px;
-  height: 120px;
-  left: 50%;
-  top: 50%;
-  transform: translate(-38%,-32%) rotate(-8deg);
-  border: 10px solid rgba(216,221,205,.75);
-  border-bottom-width: 19px;
-  box-shadow: 0 22px 20px rgba(23,43,31,.2);
-}
-
-/* Rozmyta plama słońca w prawym górnym rogu grafiki */
-.sun-glow {
-  position: absolute;
-  width: 220px;
-  height: 220px;
-  background: #f6db9b;
-  opacity: .7;
-  border-radius: 50%;
-  top: -65px;
-  right: 10px;
-  filter: blur(5px);
+  inset: auto 0 0 0;
+  height: 90px;
+  background: linear-gradient(to top,rgba(23,43,31,.45),transparent);
 }
 
 /* Podpis miast na grafice */

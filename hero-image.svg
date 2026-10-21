@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-labelledby="t d">
+  <title id="t">Zadbany grób o świcie</title>
+  <desc id="d">Nagrobek z krzyżem, znicze, bukiet kwiatów i cyprysy w porannym świetle.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8fae9b"/>
+      <stop offset=".55" stop-color="#d9dcbd"/>
+      <stop offset="1" stop-color="#f6e3b4"/>
+    </linearGradient>
+    <radialGradient id="sun" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#fdeab8" stop-opacity=".95"/>
+      <stop offset=".45" stop-color="#f6db9b" stop-opacity=".45"/>
+      <stop offset="1" stop-color="#f6db9b" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="candle" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#ffd98a" stop-opacity=".85"/>
+      <stop offset="1" stop-color="#ffb55a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#6b8a73"/>
+      <stop offset="1" stop-color="#3f5b4a"/>
+    </linearGradient>
+    <linearGradient id="stone" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#f0efe8"/>
+      <stop offset=".6" stop-color="#d9dbd2"/>
+      <stop offset="1" stop-color="#b9beb4"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d0604c"/>
+      <stop offset="1" stop-color="#9c3a30"/>
+    </linearGradient>
+    <linearGradient id="flame" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#f4a23c"/>
+      <stop offset="1" stop-color="#fff3c4"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="600" fill="url(#sky)"/>
+  <circle cx="450" cy="270" r="250" fill="url(#sun)"/>
+  <circle cx="450" cy="270" r="50" fill="#f9e3aa"/>
+
+  <g fill="#fff" opacity=".1">
+    <polygon points="450,270 120,600 230,600"/>
+    <polygon points="450,270 300,600 380,600"/>
+    <polygon points="450,270 40,470 40,560"/>
+  </g>
+
+  <g fill="none" stroke="#3f5b4a" stroke-width="2.5" stroke-linecap="round" opacity=".7">
+    <path d="M150 140 q8 -8 16 0 q8 -8 16 0"/>
+    <path d="M205 105 q6 -6 12 0 q6 -6 12 0"/>
+    <path d="M120 190 q5 -5 10 0 q5 -5 10 0"/>
+  </g>
+
+  <path d="M0 360 C80 320 160 330 240 350 C330 372 420 318 520 335 C560 342 585 350 600 356 L600 600 L0 600Z" fill="#a9bfa9"/>
+  <path d="M0 400 C100 365 200 385 300 395 C400 405 500 372 600 392 L600 600 L0 600Z" fill="#86a08d"/>
+
+  <path d="M95 190 C122 255 130 340 120 415 L70 415 C60 340 68 255 95 190Z" fill="#4f6d58"/>
+  <path d="M142 250 C162 300 168 360 160 420 L122 420 C114 360 122 300 142 250Z" fill="#5f7e68"/>
+  <path d="M525 200 C550 270 558 350 550 420 L500 420 C492 350 500 270 525 200Z" fill="#4a6853"/>
+  <circle cx="468" cy="392" r="34" fill="#6a8872"/>
+  <circle cx="492" cy="402" r="28" fill="#5d7c66"/>
+
+  <path d="M0 430 C150 410 450 410 600 430 L600 600 L0 600Z" fill="url(#ground)"/>
+  <ellipse cx="300" cy="428" rx="330" ry="26" fill="#fff" opacity=".14"/>
+
+  <ellipse cx="305" cy="492" rx="130" ry="12" fill="#1f3328" opacity=".28"/>
+
+  <rect x="225" y="430" width="150" height="26" rx="3" fill="#bfc4ba"/>
+  <path d="M240 436 V300 C240 260 268 236 300 236 C332 236 360 260 360 300 V436Z" fill="url(#stone)"/>
+  <path d="M252 432 V302 C252 268 275 248 300 248 C325 248 348 268 348 302 V432" fill="none" stroke="#fff" stroke-opacity=".4" stroke-width="2"/>
+  <rect x="294" y="272" width="12" height="56" rx="2" fill="#8a9189"/>
+  <rect x="278" y="288" width="44" height="12" rx="2" fill="#8a9189"/>
+  <rect x="268" y="350" width="64" height="5" rx="2.5" fill="#a3aaa0"/>
+  <rect x="278" y="364" width="44" height="5" rx="2.5" fill="#a3aaa0"/>
+  <rect x="286" y="378" width="28" height="5" rx="2.5" fill="#a3aaa0"/>
+
+  <path d="M188 472 L215 452 L385 452 L412 472Z" fill="#e6e7de"/>
+  <rect x="188" y="472" width="224" height="20" fill="#c4c8be"/>
+
+  <g fill="none" stroke="#4d7a56" stroke-width="2.5" stroke-linecap="round">
+    <path d="M357 456 L345 428"/>
+    <path d="M357 456 L362 418"/>
+    <path d="M357 456 L378 433"/>
+    <path d="M357 456 L352 442"/>
+    <path d="M357 456 L370 447"/>
+    <path d="M357 456 L335 444"/>
+  </g>
+  <g fill="#4d7a56">
+    <ellipse cx="328" cy="450" rx="15" ry="6" transform="rotate(-28 328 450)"/>
+    <ellipse cx="388" cy="448" rx="15" ry="6" transform="rotate(32 388 448)"/>
+    <ellipse cx="357" cy="456" rx="14" ry="5" transform="rotate(-8 357 456)"/>
+  </g>
+  <g>
+    <circle cx="345" cy="426" r="12" fill="#f7f1e1"/><circle cx="345" cy="426" r="5" fill="#e8b66a"/>
+    <circle cx="362" cy="416" r="12" fill="#e29a6f"/><circle cx="362" cy="416" r="5" fill="#f6db9b"/>
+    <circle cx="378" cy="431" r="11" fill="#f7f1e1"/><circle cx="378" cy="431" r="4.5" fill="#e8b66a"/>
+    <circle cx="352" cy="441" r="10" fill="#e29a6f"/><circle cx="352" cy="441" r="4" fill="#f6db9b"/>
+    <circle cx="370" cy="446" r="9" fill="#f7f1e1"/><circle cx="370" cy="446" r="3.5" fill="#e8b66a"/>
+    <circle cx="335" cy="442" r="9" fill="#f7f1e1"/><circle cx="335" cy="442" r="3.5" fill="#e8b66a"/>
+  </g>
+
+  <circle cx="252" cy="438" r="34" fill="url(#candle)"/>
+  <circle cx="223" cy="447" r="24" fill="url(#candle)"/>
+
+  <path d="M238 456 L242 424 L262 424 L266 456Z" fill="url(#glass)"/>
+  <rect x="240" y="419" width="24" height="6" rx="2" fill="#3a3f3b"/>
+  <ellipse cx="252" cy="438" rx="4.5" ry="9" fill="url(#flame)"/>
+
+  <path d="M213 458 L216 436 L231 436 L234 458Z" fill="url(#glass)"/>
+  <rect x="214" y="432" width="18" height="5" rx="2" fill="#3a3f3b"/>
+  <ellipse cx="223" cy="447" rx="3.5" ry="7" fill="url(#flame)"/>
+
+  <path d="M0 525 C120 500 250 512 300 518 C400 528 500 498 600 518 L600 600 L0 600Z" fill="#2f4a3b"/>
+  <g fill="#f7f1e1" opacity=".85">
+    <circle cx="60" cy="560" r="3"/><circle cx="130" cy="575" r="2.5"/><circle cx="470" cy="565" r="3"/>
+    <circle cx="540" cy="580" r="2.5"/><circle cx="395" cy="585" r="2"/>
+  </g>
+  <g fill="#e29a6f" opacity=".9">
+    <circle cx="95" cy="582" r="2.5"/><circle cx="505" cy="552" r="2.5"/><circle cx="230" cy="580" r="2"/>
+  </g>
+  <g fill="none" stroke="#4d7a56" stroke-width="2" stroke-linecap="round">
+    <path d="M30 600 q4 -22 12 -30 M42 600 q0 -18 -4 -28"/>
+    <path d="M560 600 q-4 -22 -12 -30 M548 600 q0 -18 4 -28"/>
+    <path d="M330 600 q3 -16 10 -24 M342 600 q-1 -14 -5 -22"/>
+  </g>
+</svg>
