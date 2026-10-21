@@ -438,7 +438,7 @@ h2 em {
 .image-caption {
   position: absolute;
   z-index: 2;
-  bottom: 22px;
+  bottom: 8px;
   left: 28px;
   color: #fff;
   font-size: 14px;
@@ -663,6 +663,37 @@ h2 em {
   margin-left: 13px;
 }/* =========================================================
 
+/* Podpis kroku nad przełącznikiem rodzaju grobu */
+.variant-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 12px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.variant-label span {
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--orange);
+  color: #fff;
+  font-size: 12px;
+  letter-spacing: 0;
+}
+
+.variant-label em {
+  font-style: normal;
+  font-size: 17px;
+  color: var(--orange);
+}
+
 /* Przełącznik rodzaju grobu nad pakietami */
 .variant-switch {
   display: inline-flex;
@@ -672,6 +703,32 @@ h2 em {
   margin-bottom: 28px;
   background: var(--paper);
   border: 1px solid var(--line);
+}
+
+/* Delikatne zwrócenie uwagi: kilka pulsów, znika po pierwszym wyborze */
+.variant-switch.nudge {
+  animation: variant-nudge 1.8s ease-out 3;
+}
+
+.variant-label.nudge em {
+  animation: variant-arrow 1.8s ease-in-out 3;
+}
+
+@keyframes variant-nudge {
+  0% { box-shadow: 0 0 0 0 rgba(189,120,85,.35); }
+  70%, 100% { box-shadow: 0 0 0 12px rgba(189,120,85,0); }
+}
+
+@keyframes variant-arrow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(4px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .variant-switch.nudge,
+  .variant-label.nudge em {
+    animation: none;
+  }
 }
 
 .variant-btn {
@@ -1315,6 +1372,15 @@ h2 em {
   .floating-note {
     font-size: 14px;
     padding: 11px;
+  }
+
+  /* Podpis miast: mniejszy i zawijany, mieści się pod okienkiem */
+  .image-caption {
+    left: 16px;
+    right: 12px;
+    font-size: 11px;
+    line-height: 1.25;
+    letter-spacing: .05em;
   }
 
   /* Opinie: mniejszy cytat */

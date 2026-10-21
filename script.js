@@ -16,8 +16,22 @@ document.querySelectorAll(".main-nav a").forEach((link) => {
 const variantButtons = document.querySelectorAll(".variant-btn");
 let currentVariant = variantButtons[0];
 
+const variantNudge = document.querySelectorAll(".variant-switch, .variant-label");
+const variantSwitch = document.querySelector(".variant-switch");
+
+if (variantSwitch && "IntersectionObserver" in window) {
+  const observer = new IntersectionObserver(([entry]) => {
+    if (entry.isIntersecting) {
+      variantNudge.forEach((el) => el.classList.add("nudge"));
+      observer.disconnect();
+    }
+  }, { threshold: 0.6 });
+  observer.observe(variantSwitch);
+}
+
 variantButtons.forEach((button) => {
   button.addEventListener("click", () => {
+    variantNudge.forEach((el) => el.classList.remove("nudge"));
     currentVariant = button;
     variantButtons.forEach((item) => {
       const active = item === button;
